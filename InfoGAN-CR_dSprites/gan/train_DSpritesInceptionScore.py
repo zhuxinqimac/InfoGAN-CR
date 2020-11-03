@@ -8,11 +8,13 @@ if __name__ == "__main__":
     data, metric_data, latent_values, metadata = \
         load_dSprites("../data/dSprites")
 
-    network_path = "../metric_model/DSprites"
+    # network_path = "../metric_model/DSprites"
+    network_path = "/mnt/hdd/repo_results/InfoGAN-CR/InfoGAN-CR_dSprites/metric_model/DSprites"
     if not os.path.exists(network_path):
         os.makedirs(network_path)
 
-    checkpoint_dir = "../metric_model/DSprites/checkpoint"
+    # checkpoint_dir = "../metric_model/DSprites/checkpoint"
+    checkpoint_dir = "/mnt/hdd/repo_results/InfoGAN-CR/InfoGAN-CR_dSprites/metric_model/DSprites/checkpoint"
     if not os.path.exists(checkpoint_dir):
         os.makedirs(checkpoint_dir)
 

@@ -64,7 +64,8 @@ class GANTask(GPUTask):
                 data=data,
                 metadata=metadata,
                 latent_values=latent_values,
-                network_path="metric_model/DSprites",
+                # network_path="metric_model/DSprites",
+                network_path="/mnt/hdd/repo_results/InfoGAN-CR/InfoGAN-CR_dSprites/metric_model/DSprites",
                 shape_network=shape_network,
                 sample_dir=sample_dir)
             dHSICMetric = DHSICMetric(

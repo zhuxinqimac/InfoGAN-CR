@@ -8,6 +8,7 @@ def load_dSprites(path):
     dataset_zip = np.load(
         os.path.join(
             path, "dsprites_ndarray_co1sh3sc6or40x32y32_64x64.npz"),
+        encoding="latin1",
         allow_pickle=True)
     imgs = dataset_zip['imgs']
     latent_values = dataset_zip['latents_values']
@@ -48,13 +49,13 @@ def load_dSprites(path):
              "label": fixed_latent_id - 1})
 
     selected_ids = np.random.permutation(range(imgs.shape[0]))
-    selected_ids = selected_ids[0: imgs.shape[0] / 10]
+    selected_ids = selected_ids[0: imgs.shape[0] // 10]
     metric_data_eval_std = imgs[selected_ids]
 
-    random_latent_ids = sample_latent(size=imgs.shape[0] / 10)
+    random_latent_ids = sample_latent(size=imgs.shape[0] // 10)
     random_latent_ids = random_latent_ids.astype(np.int32)
     random_ids = latent_to_index(random_latent_ids)
-    assert random_latent_ids.shape == (imgs.shape[0] / 10, 6)
+    assert random_latent_ids.shape == (imgs.shape[0] // 10, 6)
     random_imgs = imgs[random_ids]
 
     random_latents = np.zeros((random_imgs.shape[0], 6))
